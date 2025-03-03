@@ -8,7 +8,7 @@ import (
 
 	"github.com/spf13/cobra"
 	"github.com/0v3rr1de0/mcsrvr/pkg/config"
-	"github.com/0v3rr1de0/mcsrvr/pkg/server"
+	"github.com/0v3rr1de0/mcsrvr/pkg/server/process"
 )
 
 var (
@@ -48,7 +48,7 @@ Example:
 		for _, srv := range servers {
 			// Determine server status
 			status := "Offline"
-			if process, exists := server.ActiveServers[srv.Name]; exists && process.Running {
+			if proc, exists := process.ActiveServers[srv.Name]; exists && proc.Running {
 				status = "Online"
 			}
 			
@@ -68,8 +68,8 @@ Example:
 
 			// Get PID if server is running
 			pid := "-"
-			if process, exists := server.ActiveServers[srv.Name]; exists && process.Running {
-				pid = fmt.Sprintf("%d", process.PID)
+			if proc, exists := process.ActiveServers[srv.Name]; exists && proc.Running {
+				pid = fmt.Sprintf("%d", proc.PID)
 			}
 
 			fmt.Fprintf(w, "%s\t%s\t%s\t%s\t%s\t%s\t%s\n",

@@ -1,6 +1,7 @@
 mcsrvr
 ├── .gitignore
 ├── DOCUMENTATION.md
+├── LICENSE
 ├── README.md
 ├── cmd
 │   ├── backup.go
@@ -25,6 +26,16 @@ mcsrvr
     ├── downloader
     │   └── downloader.go
     └── server
+        ├── backup
+        │   └── backup.go
+        ├── init
+        │   └── init.go
+        ├── process
+        │   ├── process.go
+        │   ├── sysprocattr_unix.go
+        │   └── sysprocattr_windows.go
+        ├── rcon
+        │   └── rcon.go
         ├── server.go
         ├── sysprocattr_unix.go
         └── sysprocattr_windows.go

@@ -8,6 +8,7 @@ import (
 	"github.com/spf13/cobra"
 	"github.com/0v3rr1de0/mcsrvr/pkg/config"
 	"github.com/0v3rr1de0/mcsrvr/pkg/server"
+	"github.com/0v3rr1de0/mcsrvr/pkg/server/process"
 )
 
 // restartCmd represents the restart command
@@ -30,8 +31,8 @@ Example:
 		}
 
 		// Check if the server is running
-		process, exists := server.ActiveServers[serverName]
-		if !exists || !process.Running {
+		proc, exists := process.ActiveServers[serverName]
+		if !exists || !proc.Running {
 			fmt.Fprintf(os.Stderr, "Error: Server '%s' is not running\n", serverName)
 			os.Exit(1)
 		}
@@ -48,7 +49,7 @@ Example:
 		time.Sleep(5 * time.Second)
 
 		// Verify that the server is fully stopped
-		if process, exists := server.ActiveServers[serverName]; exists && process.Running {
+		if proc, exists := process.ActiveServers[serverName]; exists && proc.Running {
 			fmt.Fprintf(os.Stderr, "Error: Server '%s' is still running after stop command\n", serverName)
 			os.Exit(1)
 		}

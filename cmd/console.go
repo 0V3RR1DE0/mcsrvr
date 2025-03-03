@@ -12,6 +12,7 @@ import (
 	"github.com/spf13/cobra"
 	"github.com/0v3rr1de0/mcsrvr/pkg/config"
 	"github.com/0v3rr1de0/mcsrvr/pkg/server"
+	"github.com/0v3rr1de0/mcsrvr/pkg/server/process"
 )
 
 // consoleCmd represents the console command
@@ -35,7 +36,7 @@ Example:
 		}
 
 		// Check if the server is running.
-		if _, exists := server.ActiveServers[serverName]; !exists {
+		if _, exists := process.ActiveServers[serverName]; !exists {
 			fmt.Fprintf(os.Stderr, "Error: Server '%s' is not running. Start it first with 'mcsrvr start %s'\n", serverName, serverName)
 			os.Exit(1)
 		}
