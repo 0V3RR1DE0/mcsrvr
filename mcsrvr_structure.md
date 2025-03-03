@@ -1,5 +1,6 @@
 mcsrvr
 ├── .gitignore
+├── CHANGELOG.md
 ├── DOCUMENTATION.md
 ├── LICENSE
 ├── README.md
@@ -36,6 +37,4 @@ mcsrvr
         │   └── sysprocattr_windows.go
         ├── rcon
         │   └── rcon.go
-        ├── server.go
-        ├── sysprocattr_unix.go
-        └── sysprocattr_windows.go
+        └── server.go
