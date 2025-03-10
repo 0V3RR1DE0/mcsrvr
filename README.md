@@ -1,5 +1,7 @@
 # MCSRVR - Minecraft Server Manager
 
+[![HackerNews](https://hackerbadge.vercel.app/api?id=43241746&type=dark)](https://news.ycombinator.com/item?id=43241746)
+
 MCSRVR is a command-line tool for easily setting up and managing Minecraft servers. It automates the process of downloading server files, configuring servers, and provides a systemctl-like interface for managing server processes.
 
 ## Features
